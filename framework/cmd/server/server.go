@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/joho/godotenv"
+	"github.com/streadway/amqp"
 )
 
 var db database.Database

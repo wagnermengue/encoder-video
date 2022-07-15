@@ -17,7 +17,7 @@ type JobWorkerResult struct {
 	Error   error
 }
 
-func JobWorker(messageChannel chan amqp.Delivery, returnChan chan JobWorkerResult, job domain.Job, jobService JobService, workerID int) {
+func JobWorker(messageChannel chan amqp.Delivery, returnChan chan JobWorkerResult, jobService JobService, job domain.Job, workerID int) {
 
 	for message := range messageChannel {
 		err := utils.IsJson(string(message.Body))
